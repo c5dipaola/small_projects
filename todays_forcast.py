@@ -12,8 +12,8 @@ def api_call_5day(zipcode):
     units_imp = "&units=imperial"
     api_key = "&appid=<<YOUR OPENWEATHER.ORG API KEY>>"
     api_call = requests.get(base_url + type_5day_zip + zipcode + units_imp + api_key)
-    deconded = json.loads(api_call.text)
-    return deconded
+    decoded = json.loads(api_call.text)
+    return decoded
 
 def api_call_today(zipcode):
     base_url = "http://api.openweathermap.org/data/2.5/"
@@ -21,8 +21,8 @@ def api_call_today(zipcode):
     units_imp = "&units=imperial"
     api_key = "<<YOUR OPENWEATHER.ORG API KEY>>"
     api_call = requests.get(base_url + type_today_zip + zipcode + units_imp + api_key)
-    deconded = json.loads(api_call.text)
-    return deconded
+    decoded = json.loads(api_call.text)
+    return decoded
 
 zip_input = raw_input("Please enter the 5 digit zip code:  ")
 
