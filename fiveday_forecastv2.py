@@ -16,7 +16,6 @@ def memoize(func):
     return memoized_func
 
 
-# noinspection PyPep8Naming
 @memoize
 def apiResponse(apicall):
     """
@@ -42,22 +41,7 @@ units_imp = "&units=imperial"
 # NOTE - You need to sign up at https://openweathermaps.org and get your own API Key
 api_key = "&appid=<YOUR OPENWEATHERMAPS API KEY GOES HERE>"
 
-print(base_url + type_5day_zip + zip_input + units_imp + api_key)
-
 api_call = requests.get(base_url + type_5day_zip + zip_input + units_imp + api_key)
-
-# dint = 0
-
-# day = time.strftime('%w', (time.localtime(apiResponse(api_call)['list'][dint]['dt'])))
-# date = time.strftime('%A, %B %d, %Y', (time.localtime(apiResponse(api_call)['list'][dint]['dt'])))
-# now_temp = apiResponse(api_call)['list'][dint]['main']['temp']
-# conditions = apiResponse(api_call)['list'][dint]['weather'][0]['description']
-# time_now = time.strftime('%H:%M', (time.localtime(apiResponse(api_call)['list'][dint]['dt'])))
-
-# int_day = int(day)
-#
-# print("The day value is {}".format(type(day)))
-# print("the int_day value is {}".format(type(int_day)))
 
 city = apiResponse(api_call)['city']['name']
 
